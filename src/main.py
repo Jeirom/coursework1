@@ -16,7 +16,7 @@ logging.basicConfig(
     )
 main_logger = logging.getLogger("Universal logger")
 
-@load_or_make(r"..\\data\\result.json")
+@load_or_make(r"..\\data\\result1.json")
 def spending_by_category(file_path: str, word: str, date: Optional[str] = None):
     """Главная функция. Принимает на вход имя файла, слово для поиска, опционально - дату. Результат передает
     в декоратора, сохраняет файл в папке data"""

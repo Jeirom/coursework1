@@ -1,8 +1,4 @@
-2024-10-05 22:48:40,583: main.py: INFO: Start program; ../data/operations.xlsx, Супермаркеты, None
-2024-10-05 22:48:41,329: main.py: INFO: ok
-2024-10-05 22:48:41,678: main.py: INFO: ok
-2024-10-05 22:48:41,686: main.py: INFO: ok
-2024-10-05 22:48:41,690: main.py: INFO: Start program; ..\data\operations.xlsx, Супермаркеты, None
-2024-10-05 22:48:42,306: main.py: INFO: ok
-2024-10-05 22:48:42,703: main.py: INFO: ok
-2024-10-05 22:48:42,711: main.py: INFO: ok
+2024-10-06 13:13:10,882: main.py: INFO: Start program; ../data/operations.xlsx, Супермаркеты, None
+2024-10-06 13:13:11,678: main.py: INFO: ok
+2024-10-06 13:13:12,046: main.py: INFO: ok
+2024-10-06 13:13:12,055: main.py: INFO: ok
