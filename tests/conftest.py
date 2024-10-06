@@ -1,12 +1,7 @@
-from unittest import Mock
-from unittest.mock import mock_open
+import pytest
 
-import pandas as pd
-import unittest
-from conftest import *
-from src.utils import open_xlsx_file
-
-data = [
+def data_file():
+     data = [
     {
         "Дата операции": "06.10.2021 16:32:03",
         "Дата платежа": "06.10.2021",
@@ -24,10 +19,4 @@ data = [
         "Округление на инвесткопилку": 0,
         "Сумма операции с округлением": 94.82
     }]
-
-
-def test_open_xlsx_file(file):
-    mock_data = Mock(return_value=data)
-    pd.read_excel = mock_data
-    assert open_xlsx_file() == data
-    mock_data.assert_called_once_with()
+     return data
