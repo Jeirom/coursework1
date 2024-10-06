@@ -6,17 +6,18 @@ from src.utils import (date_now, date_three_months_ago, load_or_make,
                        open_xlsx_file, time_for_func)
 import logging
 
-
+'''Добавил logger для функции'''
 logging.basicConfig(
     level=logging.INFO,
     format="%(asctime)s: %(filename)s: %(levelname)s: %(message)s",
-    filename="../logs/main.log",
+    filename="../logs/main.log", # <- сюда пойдет запись логов
     filemode="w",
     encoding="utf=8"
     )
 main_logger = logging.getLogger("Universal logger")
 
-@load_or_make(r"..\\data\\result1.json")
+
+@load_or_make(r"..\\data\\result.json")
 def spending_by_category(file_path: str, word: str, date: Optional[str] = None):
     """Главная функция. Принимает на вход имя файла, слово для поиска, опционально - дату. Результат передает
     в декоратора, сохраняет файл в папке data"""
@@ -33,6 +34,9 @@ def spending_by_category(file_path: str, word: str, date: Optional[str] = None):
         main_logger.critical('File not open. Analysis is required')
     filtered_rows = []
     filtered_date = []
+
+    data_frame.fillna(value=0, #Изменил все Nan значения на 0
+              inplace=True)
 
     try:
         for index, row in data_frame.iterrows():
@@ -64,10 +68,11 @@ def spending_by_category(file_path: str, word: str, date: Optional[str] = None):
     except Exception as error:
         main_logger.warning(f'Error {error}. Check programs. Need debug')
         return f"Error {error}. If you haven't called support yet, don't call"
+
     return filtered_date
 
 
 file = "../data/operations.xlsx"
-catg = "Супермаркеты"
+catg = "Аптеки"
 # time = '01.03.2021'
 print(spending_by_category(file, catg))
